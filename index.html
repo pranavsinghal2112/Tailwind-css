@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Landing page</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class=" text-[#313131] font-sans">
+    <!-- top discount item -->
+    <div class= " flex bg-[#313131]  justify-center text-white text-lg font-semibold py-2">
+       <img src="images/discount.svg" class="mx-2 " alt=""> Rs.200 off on your First Order. ✨
+    </div>
+    <!-- location selection item -->
+    <div class="flex justify-end  py-2 pr-8 bg-[#F5F5F5]">
+        <!-- Dropdown Menu for location -->
+        <div class="relative">
+            <button id = dropdownButton class="py-1 px-4 rounded-md flex items-center">
+                <span></span>
+                <!-- Location Logo and Address -->
+                <div class="flex items-end space-x-2">
+                    <img src="images/location.svg" alt="Location Icon" class="w-6 h-6">
+                    <span>Bangalore, Siri Anjaneya Temple</span>
+                </div></span><img class="px-2" src="images/dropdown.svg" alt="">
+            </button>
+            <div id=" dropdownMenu"
+                class="absolute right-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-lg hidden group-hover:block">
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Option 1</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Option 2</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Option 3</a>
+            </div>
+        </div>
+    </div>
+    <!-- navigation bar items -->
+    <nav class=" shadow-md">
+        <div class="flex justify-between items-center px-16 py-2">
+            <!-- Left Section -->
+            <ul class="flex text-lg items-center space-x-8 list-none p-0 m-0">
+                <li>
+                    <a href="#" class="flex font-bold text-xl items-center text-[313131]">
+                        <img src="images/logo.svg" alt="logo" class="mr-2">
+                        <span>Anyfeast</span>
+                    </a>
+                </li>
+                <div class="border-l-2 border-gray-300 h-16"></div>
+                <div
+                    class=" p-2 flex text-lg  items-center space-x-8 list-none shadow-none bg-[#FAF8F8] rounded-lg">
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Recipe</a></li>
+                </div>
+
+            </ul>
+
+            <!-- Right Section -->
+            <ul class="flex items-center space-x-6 list-none p-0 m-0">
+                <li><button class="bg-[#faf8f8] p-2 rounded-3xl border-2 "><a href="#" class=""><img
+                                src="images/search.svg" alt=""></a></button></li>
+                <li><button class="bg-[#faf8f8] p-2 rounded-lg border-2 "><a href="#" class="mx-8">Login</a></button>
+                </li>
+                <li><button class="bg-[#faf8f8] flex items-center p-2 rounded-lg border-2 "><a href="#"
+                            class="flex items-center">
+                            <img src="images/Cart Icon.svg" alt="Cart Icon" class=" h-7 mr-1">
+                            <span>item-count</span>
+                        </a></button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="flex flex-col items-center min-h-screen p-4">
+        <!-- Thank You Section -->
+        <div class="text-center p-6 bg-white  mb-6">
+            <div class="text-2xl font-bold mb-2">Thank You</div>
+            <div class="text-[#0B6E27] font-normal text-xl flex mx-5 mb-2"><img src="images/check.jpg" alt="">Your Order is placed successfully</div>
+            <div class="mb-4 text-xl font-semibold">Order Number: #00007023</div>
+            <img src="images/centreimg.svg" alt="Order Confirmation" class=" h-64 mx-auto">
+        </div>
+
+        <!-- Delivery Address Box -->
+        <div class="w-full max-w-2xl p-6 bg-white shadow-none  border-2 rounded-xl">
+            <h2 class="text-2xl font-semibold mb-2">Delivery Address</h2>
+            <p class="text-xl font-bold mb-1">Ojas Karmarkar</p>
+            <p class="text-xl font-normal  mb-1">9923847298</p>
+            <p class="text-xl font-normal">14th Main Road, Sector 6 Bengaluru 560092</p>
+            <div class="flex items-center justify-between mb-4 bg-[#faf8f8] rounded-lg px-5">
+                <!-- Image -->
+                <img src="images/billingimg.svg" alt="sac_img" class="h-15">
+                <!-- Details Column -->
+                <div class="flex flex-col text-lg">
+                    <div>Total: 7 Items</div>
+                    <div>Order Number: #00007023</div>
+                    <!-- track button -->
+                </div>
+                <div class="text-center">
+                    <button class="bg-[#0B6E27] text-white py-2 px-4 rounded-md hover:bg-[#095c16]">Track</button>
+                </div>
+
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full bg-white rounded-md ">
+                <div class="flex">
+                    <div class="w-1/3 bg-gradient-to-r from-[#4CAF50] to-[#0B6E27] h-1 rounded-md"></div>
+                    <div class="w-1/3 ml-1 bg-gray-100 h-1 rounded-md"></div>
+                    <div class="w-1/3 ml-1 bg-gray-100 h-1 rounded-md"></div>
+                </div>
+            </div>
+    </main>
+</body>
+
+</html>
