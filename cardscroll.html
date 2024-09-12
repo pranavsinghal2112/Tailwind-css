@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Landing page</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class=" text-[#313131] font-sans">
+    <!-- top discount item -->
+    <div class=" flex bg-[#313131]  justify-center text-white text-lg font-semibold py-2">
+        <img src="images/discount.svg" class="mx-2 " alt=""> Rs.200 off on your First Order. ✨
+    </div>
+    <!-- location selection item -->
+    <div class="flex justify-end  py-2 pr-8 bg-[#F5F5F5]">
+        <!-- Dropdown Menu for location -->
+        <div class="relative">
+            <button id=dropdownButton class="py-1 px-4 rounded-md flex items-center">
+                <span></span>
+                <!-- Location Logo and Address -->
+                <div class="flex items-end space-x-2">
+                    <img src="images/location.svg" alt="Location Icon" class="w-6 h-6">
+                    <span>Bangalore, Siri Anjaneya Temple</span>
+                </div></span><img class="px-2" src="images/dropdown.svg" alt="">
+            </button>
+            <div id=" dropdownMenu"
+                class="absolute right-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-lg hidden group-hover:block">
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Option 1</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Option 2</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Option 3</a>
+            </div>
+        </div>
+    </div>
+    <!-- navigation bar items -->
+    <nav class=" shadow-md">
+        <div class="flex justify-between items-center px-16 py-2">
+            <!-- Left Section -->
+            <ul class="flex text-lg items-center space-x-8 list-none p-0 m-0">
+                <li>
+                    <a href="#" class="flex font-bold text-xl items-center text-[313131]">
+                        <img src="images/logo.svg" alt="logo" class="mr-2">
+                        <span>Anyfeast</span>
+                    </a>
+                </li>
+                <div class="border-l-2 border-gray-300 h-16"></div>
+                <div class=" p-2 flex text-lg  items-center space-x-8 list-none shadow-none bg-[#FAF8F8] rounded-lg">
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Recipe</a></li>
+                </div>
+
+            </ul>
+
+            <!-- Right Section -->
+            <ul class="flex items-center space-x-6 list-none p-0 m-0">
+                <li><button class="bg-[#faf8f8] p-2 rounded-3xl border-2 "><a href="#" class=""><img
+                                src="images/search.svg" alt=""></a></button></li>
+                <li><button class="bg-[#faf8f8] p-2 rounded-lg border-2 "><a href="#" class="mx-8">Login</a></button>
+                </li>
+                <li><button class="bg-[#faf8f8] flex items-center p-2 rounded-lg border-2 "><a href="#"
+                            class="flex items-center">
+                            <img src="images/Cart Icon.svg" alt="Cart Icon" class=" h-7 mr-1">
+                            <span>item-count</span>
+                        </a></button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="p-14 ">
+            <div class=" p-5 shadow-lg rounded-2xl  shadow-[#c93b3b4f] ">
+                <div class="font-bold text-2xl">Explore Recipe Kit crafted just for you.</div>
+                <div class="relative overflow-hidden"></div>
+                <div id="carousel" class="flex">
+               <!-- Slide 1 -->
+               <div class=" w-full">
+                  <img src="images/cardscroll2.png" alt="Image 1" class="w-full h-auto" />
+               </div>
+               <!-- Slide 2 -->
+            </div>
+            <!-- Navigation Buttons -->
+            <button id="prev" class="absolute top-1/2 left-0 transform -translate-y-1/2">Prev</button>
+            <button id="next" class="absolute top-1/2 right-0 transform -translate-y-1/2">Next</button>
+            </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
