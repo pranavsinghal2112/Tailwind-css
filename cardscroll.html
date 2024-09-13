@@ -7,7 +7,32 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Landing page</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        // JavaScript to handle the carousel sliding effect
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.getElementById('carousel');
+            const slides = carousel.children;
+            const totalSlides = slides.length;
+            let currentIndex = 0;
 
+            // Event listeners for navigation buttons
+            document.getElementById('prev').addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Move to the previous slide
+                updateCarousel();
+            });
+
+            document.getElementById('next').addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % totalSlides; // Move to the next slide
+                updateCarousel();
+            });
+
+            // Function to update the carousel's position
+            function updateCarousel() {
+                const offset = -currentIndex * 100; // Calculate the offset for the current slide
+                carousel.style.transform = `translateX(${offset}%)`; // Apply the sliding effect
+            }
+        });
+    </script>
 </head>
 
 <body class=" text-[#313131] font-sans">
@@ -20,14 +45,13 @@
         <!-- Dropdown Menu for location -->
         <div class="relative">
             <button id=dropdownButton class="py-1 px-4 rounded-md flex items-center">
-                <span></span>
                 <!-- Location Logo and Address -->
                 <div class="flex items-end space-x-2">
                     <img src="images/location.svg" alt="Location Icon" class="w-6 h-6">
                     <span>Bangalore, Siri Anjaneya Temple</span>
-                </div></span><img class="px-2" src="images/dropdown.svg" alt="">
+                </div><img class="px-2" src="images/dropdown.svg" alt="">
             </button>
-            <div id=" dropdownMenu"
+            <div id="dropdownMenu"
                 class="absolute right-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-lg hidden group-hover:block">
                 <a href="#" class="block px-4 py-2 hover:bg-gray-100">Option 1</a>
                 <a href="#" class="block px-4 py-2 hover:bg-gray-100">Option 2</a>
@@ -75,20 +99,86 @@
         <div class="p-14 ">
             <div class=" p-5 shadow-lg rounded-2xl  shadow-[#c93b3b4f] ">
                 <div class="font-bold text-2xl">Explore Recipe Kit crafted just for you.</div>
-                <div class="relative overflow-hidden"></div>
-                <div id="carousel" class="flex">
-               <!-- Slide 1 -->
-               <div class=" w-full">
-                  <img src="images/cardscroll2.png" alt="Image 1" class="w-full h-auto" />
-               </div>
-               <!-- Slide 2 -->
+                <div class="relative overflow-hidden">
+                    <!-- Carousel Container -->
+                    <div id="carousel" class="flex transition-transform duration-500">
+                        <!-- Slide 1 -->
+                        <div class="relative flex-none w-full py-8">
+                            <img src="images/cardscroll2.png" alt="Image 1" class="w-full h-auto" />
+                            <!-- Text Overlay -->
+                            <div class="absolute inset-40 flex flex-col justify-center items-end  p-10">
+                                <div>
+                                    <p class="text-xl text-[#C30F16] font-normal mb-2 text-left">RECIPE FOR</p>
+                                    <h2 class="text-3xl text-[#C30F16] font-bold mb-2 text-left">Working Professional
+                                    </h2>
+                                    <p
+                                        class="text-base flex text-[#313131] flex items-center font-medium text-left pt-12 pb-6">
+                                        <img src="images/dish 1.svg" class="mx-2" alt="">Nourishing both body and soul
+                                    </p>
+                                    <p
+                                        class="text-base flex text-[#313131] flex items-center font-medium text-left pb-6">
+                                        <img src="images/dish 2.svg" class="mx-2" alt=""> Fostering meaningful dining
+                                        experiences
+                                    </p>
+                                    <p
+                                        class="text-base flex text-[#313131] flex items-center font-medium text-left  pb-6">
+                                        <img src="images/dish 3.svg" class="mx-2" alt=""> Nutritious recipes for busy
+                                        professionals
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="relative flex-none w-full py-8">
+                            <img src="images/cardscroll2.png" alt="Image 2" class="w-full h-auto" />
+                            <!-- Text Overlay -->
+                            <div class="absolute inset-40 flex flex-col justify-center items-end  p-10">
+                                <div>
+                                    <p class="text-xl text-[#C30F16] font-normal mb-2 text-left">RECIPE FOR</p>
+                                    <h2 class="text-3xl text-[#C30F16] font-bold mb-2 text-left">Working Professional
+                                    </h2>
+                                    <p
+                                        class="text-base flex text-[#313131] flex items-center font-medium text-left pt-12 pb-6">
+                                        <img src="images/dish 1.svg" class="mx-2" alt="">Nourishing both body and soul
+                                    </p>
+                                    <p
+                                        class="text-base flex text-[#313131] flex items-center font-medium text-left pb-6">
+                                        <img src="images/dish 2.svg" class="mx-2" alt=""> Fostering meaningful dining
+                                        experiences
+                                    </p>
+                                    <p
+                                        class="text-base flex text-[#313131] flex items-center font-medium text-left  pb-6">
+                                        <img src="images/dish 3.svg" class="mx-2" alt=""> Nutritious recipes for busy
+                                        professionals
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <button id="prev"
+                        class="absolute top-1/2 left-4 transform -translate-y-1/2  text-white px-2 py-1"><svg
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="h-6 w-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg></button>
+                    <button id="next"
+                        class="absolute top-1/2 right-4 transform -translate-y-1/2 text-black px-2 py-1"><svg
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="h-6 w-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg></button>
+                </div>
             </div>
-            <!-- Navigation Buttons -->
-            <button id="prev" class="absolute top-1/2 left-0 transform -translate-y-1/2">Prev</button>
-            <button id="next" class="absolute top-1/2 right-0 transform -translate-y-1/2">Next</button>
+            <div class="py-28 text-xl space-x-8 font-medium">
+                <button class="border-2 items-center rounded-lg border-[313131]"><span class="px-8 py-3 flex">Sort <img
+                            src="images/sort.svg" class="pl-3" alt=""></span></button>
+                <button class="border-2 items-center rounded-lg border-[313131]"><span class="px-8 py-3 flex">Cuisines
+                        <img src="images/cuisine.svg" class="pl-3" alt=""></span></button>
+                <button class="border-2 rounded-lg border-[313131] "><span class="px-8 py-3 flex">Pure Veg
+                    </span></button>
             </div>
-            </div>
-        </div>
     </main>
 </body>
 
